@@ -1,1 +1,1 @@
-<app-user-card *ngFor="let employee of employees" [x]="employees" (closedCard)="deleteUser($event)" (choosedCard)="chooseCard($event)"> </app-user-card>
+<app-user-card *ngFor="let employee of employees" [employee]="employee" (closedCard)="deleteUser($event)" (choosedCard)="chooseCard($event)"> </app-user-card>

@@ -1,8 +1,8 @@
-<div class="card" [ngClass]="{'choosen': employee?.ischoosen}" (click)="chooseCard(employee)">
+<div class="card" [ngClass]="{'choosen': employee.ischoosen}" (click)="chooseCard(employee)">
   <img class="avatar" src="../../assets/images/img_avatar.png" alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>{{x.name}}</b></h4> 
-    <p>{{x.profession}}</p>
+    <h4><b>{{employee.name}}</b></h4> 
+    <p>{{employee.profession}}</p>
   </div>
   <img  class="close" src="../../assets/images/ic_close.png" alt="" (click)="closeCard(employee)">
 </div>

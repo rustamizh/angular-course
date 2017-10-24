@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
@@ -7,16 +9,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UserCardComponent implements OnInit {
 
-  @Input() x;
+  @Input() employee;
   @Output() closedCard: EventEmitter<any> = new EventEmitter;
   @Output() choosedCard: EventEmitter<any> = new EventEmitter;
 
-  closeCard (employee) {
-    this.closedCard.emit(employee);
+
+  closeCard (x) {
+    this.closedCard.emit(x);
   }
 
-  chooseCard(employee) {
-      this.choosedCard.emit(employee);
+  chooseCard(x) {
+      this.choosedCard.emit(x);
   }
 
   constructor() { }
