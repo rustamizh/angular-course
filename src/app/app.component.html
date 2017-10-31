@@ -1,1 +1,10 @@
-<app-user-card *ngFor="let employee of employees" [employee]="employee" (closedCard)="deleteUser($event)" (choosedCard)="chooseCard($event)"> </app-user-card>
+<app-user-card *ngFor="let user of users" [user]="user" (closedCard)="deleteUser($event)" (choosedCard)="chooseCard($event)"> </app-user-card>
+
+<form action="http://test-api.javascript.ru/v1/rustamizh/users" method="post">
+    <input name="fullName" type="text" placeholder="name" #userName>
+    <input name="email" type="text" placeholder="email" #userEmail>
+    <!-- <button type="submit" (click)="addUser(userName.value, userEmail.value); userName.value = ''; userEmail.value = ''">Add user</button> -->
+    <button type="submit">Add user</button>
+
+</form>
+<span class="warning">{{message}}</span>

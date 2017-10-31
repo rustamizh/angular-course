@@ -1,22 +1,5 @@
 import { Component } from '@angular/core';
-
-let employees = [
-  {
-    name: "John Doe",
-    profession: "Engineer",
-    ischoosen: false
-  },
-  {
-    name: "Johanna Doe",
-    profession: "Architect",
-    ischoosen: false
-  },
-  {
-    name: "Brian Doe",
-    profession: "Manager",
-    ischoosen: false
-  }
-]
+import {UserService} from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -26,16 +9,50 @@ let employees = [
 export class AppComponent {
   title = 'app';
 
-  private deletedIndex;
+  public users;
 
-  private employees = employees;
+  public message;
 
-  public deleteUser(employee) {
-    this.deletedIndex = this.employees.indexOf(employee);
-    this.employees.splice(this.deletedIndex, 1);
+  private _userService;
+
+  private _newUser;
+
+  public deleteUser(user) {
+
+    this._userService.removeUser(user);
+    this.users = this._userService.getUsers();
   }
 
-  public chooseCard(currentCard) {
-   currentCard.ischoosen = !currentCard.ischoosen;
+  public chooseCard(user) {
+    this._userService.chooseUser(user);
+    this.users = this._userService.getUsers();
   }
+
+  public addUser(name, email) {
+    if (!name || !email){
+      this.message = "write name and email";
+      return;
+    }
+
+    this._newUser = {
+      name: name,
+      email: email,
+      ischoosen: false
+    }
+
+    this.message = "";
+
+    this._userService.addUser(this._newUser);
+    this.users = this._userService.getUsers();
+    console.log(this._newUser);
+  }
+
+  constructor(userService: UserService) {
+    this._userService = userService;
+  }
+
+  ngOnInit() {
+    this.users = this._userService.getUsers();
+  }
+
 }

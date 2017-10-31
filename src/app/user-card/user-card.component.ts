@@ -9,17 +9,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UserCardComponent implements OnInit {
 
-  @Input() employee;
+  @Input() user;
   @Output() closedCard: EventEmitter<any> = new EventEmitter;
   @Output() choosedCard: EventEmitter<any> = new EventEmitter;
 
 
-  closeCard (x) {
-    this.closedCard.emit(x);
+  closeCard (user) {
+    this.closedCard.emit(user);
   }
 
-  chooseCard(x) {
-      this.choosedCard.emit(x);
+  chooseCard(user) {
+      this.choosedCard.emit(user);
   }
 
   constructor() { }
