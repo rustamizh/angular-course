@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import {UserService} from './user.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {UserService} from './user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
 
   public users;
@@ -17,17 +17,19 @@ export class AppComponent {
 
   private _newUser;
 
+  // УДАЛЕНИЕ КАРТОЧКИ
   public deleteUser(user) {
-
     this._userService.removeUser(user);
-    this.users = this._userService.getUsers();
+    this._userService.getUsers().subscribe(users => this.users = users);
   }
 
+  // ВЫБОР КАРТОЧКИ
   public chooseCard(user) {
+    console.log(user);
     this._userService.chooseUser(user);
-    this.users = this._userService.getUsers();
   }
 
+  // ДОБАВЛЕНИЕ КАРТОЧКИ
   public addUser(name, email) {
     if (!name || !email){
       this.message = "write name and email";
@@ -35,15 +37,14 @@ export class AppComponent {
     }
 
     this._newUser = {
-      name: name,
+      fullName: name,
       email: email,
-      ischoosen: false
+      isСhoosen: false
     }
 
     this.message = "";
-
     this._userService.addUser(this._newUser);
-    this.users = this._userService.getUsers();
+    this._userService.getUsers().subscribe(users => this.users = users);
     console.log(this._newUser);
   }
 
@@ -52,7 +53,12 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.users = this._userService.getUsers();
+    // this.users = this._userService.getUsers();
+    this._userService.getUsers().subscribe(users => this.users = users);
+  }
+
+  ngOnChange () {
+    this._userService.getUsers().subscribe(users => this.users = users);
   }
 
 }

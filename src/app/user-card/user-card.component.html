@@ -1,7 +1,7 @@
-<div class="card" [ngClass]="{'choosen': user.ischoosen}" (click)="chooseCard(user)">
+<div class="card" [ngClass]="{'choosen': user.isChoosen}" (click)="chooseCard(user)">
   <img class="avatar" src="../../assets/images/img_avatar.png" alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>{{user.name}}</b></h4> 
+    <h4><b>{{user.fullName}}</b></h4> 
     <p>{{user.email}}</p>
   </div>
   <img  class="close" src="../../assets/images/ic_close.png" alt="" (click)="closeCard(user)">
