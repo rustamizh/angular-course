@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserCardComponent } from './user-card.component';
+import { MailboxFolderComponent } from './mailbox-folder.component';
 
-describe('UserCardComponent', () => {
-  let component: UserCardComponent;
-  let fixture: ComponentFixture<UserCardComponent>;
+describe('MailboxFolderComponent', () => {
+  let component: MailboxFolderComponent;
+  let fixture: ComponentFixture<MailboxFolderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserCardComponent ]
+      declarations: [ MailboxFolderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserCardComponent);
+    fixture = TestBed.createComponent(MailboxFolderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

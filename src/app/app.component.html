@@ -1,10 +1,1 @@
-<app-user-card *ngFor="let user of users" [user]="user" (closedCard)="deleteUser($event)" (choosedCard)="chooseCard($event)"> </app-user-card>
-
-<div>
-    <input name="fullName" type="text" placeholder="name" #userName>
-    <input name="email" type="text" placeholder="email" #userEmail>
-    <button type="submit" (click)="addUser(userName.value, userEmail.value); userName.value = ''; userEmail.value = ''">Add user</button>
-</div>
-
-
-<span class="warning">{{message}}</span>
+<router-outlet></router-outlet>

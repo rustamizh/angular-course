@@ -1,0 +1,18 @@
+.main-menu {
+    margin: 0 0 20px 0;
+    padding: 0 0 20px;
+    list-style-type: none;
+}
+
+.main-menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.main-menu a {
+    text-decoration: none;
+}
+
+.active {
+    border-bottom: 1px solid;
+}

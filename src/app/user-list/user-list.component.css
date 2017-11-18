@@ -1,0 +1,23 @@
+.warning {
+    color: rgb(212, 62, 62);
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+    border-bottom: 1px dashed rgb(212, 62, 62);
+}
+
+input {
+    border: 1px solid #DEDEDE;
+    border-radius: 4px;
+    padding: 5px 20px;
+}
+
+button {
+    border: 1px solid #DEDEDE;
+    background-color: rgb(212, 62, 62);
+    border-radius: 4px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+}

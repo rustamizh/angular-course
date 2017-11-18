@@ -1,0 +1,12 @@
+.mailbox-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mailbox-menu a {
+    text-decoration: none;
+}
+
+.active {
+    border-bottom: 1px solid;
+}
