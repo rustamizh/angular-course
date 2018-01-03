@@ -34,7 +34,7 @@ export class UserService {
 
   // ПОЛУЧЕНИЕ СПИСКА ПОЛЬЗОВАТЕЛЕЙ
   public getUsers () {
-    this.users = this._http.get('http://test-api.javascript.ru/v1/rustamizh/users');
+    this.users = this._http.get('https://my-json-server.typicode.com/rustamizh/demo/users');
     for (let i = 0; i < this.users.length; i++) {
       this.users[i].isChoosen = false;
     }
@@ -56,14 +56,14 @@ export class UserService {
   // УДАЛЕНИЕ USER
   public removeUser (user) {
     console.log(user);
-    this._http.delete('http://test-api.javascript.ru/v1/rustamizh/users/' + user._id).subscribe();
+    this._http.delete('https://my-json-server.typicode.com/rustamizh/demo/users' + user._id).subscribe();
   }
 
 
   // ДОБАВЛЕНИЕ USER
   public addUser(user) {
     console.log(user);
-    this._http.post('http://test-api.javascript.ru/v1/rustamizh/users', user).subscribe();
+    this._http.post('https://my-json-server.typicode.com/rustamizh/demo/users', user).subscribe();
   }
 }
 

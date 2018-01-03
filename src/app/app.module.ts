@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UserCardComponent } from './user-card/user-card.component';
 import {UserService} from './user.service';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MailboxComponent } from './mailbox/mailbox.component';
@@ -22,7 +22,7 @@ const routes = [
     ]},
     {path: 'users', component: UserListComponent}
    ]}
-]
+];
 
 @NgModule({
   declarations: [

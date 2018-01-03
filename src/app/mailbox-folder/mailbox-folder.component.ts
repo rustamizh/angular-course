@@ -9,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
 export class MailboxFolderComponent implements OnInit {
 
   constructor(private rout: ActivatedRoute) {
-    this.rout.params.subscribe(params => console.log(params))
+    this.rout.params.subscribe(params => console.log(params));
   }
 
   ngOnInit() {

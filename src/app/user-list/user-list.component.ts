@@ -16,6 +16,9 @@ export class UserListComponent implements OnInit {
 
   private _newUser;
 
+  private choosenUser;
+
+
   // УДАЛЕНИЕ КАРТОЧКИ
   public deleteUser(user) {
     this._userService.removeUser(user);

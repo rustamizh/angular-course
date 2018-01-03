@@ -14,11 +14,11 @@ export class UserCardComponent implements OnInit {
   @Output() choosedCard: EventEmitter<any> = new EventEmitter;
 
 
-  closeCard (user) {
+  onCloseCard (user) {
     this.closedCard.emit(user);
   }
 
-  chooseCard(user) {
+  onChooseCard(user) {
       this.choosedCard.emit(user);
   }
 

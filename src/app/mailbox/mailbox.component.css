@@ -5,8 +5,16 @@
 
 .mailbox-menu a {
     text-decoration: none;
+    border-radius: 3px;
+    padding: 2px 5px;
+    color: #000000;
+    
+}
+
+.mailbox-menu li {
+    margin-bottom: 5px;
 }
 
 .active {
-    border-bottom: 1px solid;
+    background-color: rgb(233, 233, 233);
 }
